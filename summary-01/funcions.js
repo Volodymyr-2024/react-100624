@@ -14,9 +14,17 @@ console.log(add(3, 4));
 const multiply = (a, b) => a * b;
 console.log(multiply(2, 5));
 
+console.log((a, b) => (a * b)(2, 5));
+
+const multiply2 = (a, b) => {
+  return a * b;
+};
+
 // 3.1. Стрелочная функция с одним параметром и одним выражением
 const square = (x) => x * x;
 console.log(square(5)); // 25
+
+const square2 = (x) => x * x;
 
 // 3.2. Стрелочная функция с несколькими параметрами
 const add = (a, b) => a + b;
@@ -63,9 +71,21 @@ function higherOrder(fn, x, y) {
 const subtract = (a, b) => a - b;
 console.log(higherOrder(subtract, 10, 5));
 
+const arr1 = ["a", "b", "c"];
+const arr2 = arr1.map((item) => item.toUpperCase()); // ["A", "B", "C"]
+
+const reactArr = arr1.map((item) => {
+  return <li>{item}</li>;
+}); // [<li>a</li>, <li>b</li>, <li>c</li>]
+
 // 6. Немедленно вызываемая функция (IIFE - Immediately Invoked Function Expression)
 (function () {
   console.log("Эта функция вызвана немедленно!");
+})();
+
+// Асинхронная IIFE
+(async function () {
+  console.log("Эта асинхронная функция вызвана немедленно!");
 })();
 
 // 7. Рекурсивная функция (Recursive Function)
