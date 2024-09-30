@@ -1,0 +1,33 @@
+.team-list {
+    background-color: lightgrey;
+    padding: 16px;
+    margin: 0;
+    border: 2px solid black;
+}
+
+.team-list > li {
+    list-style: none;
+}
+
+.team-list > li > h3 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+}
+
+.member-list {
+    border: 2px solid darkred;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-list > li {
+    list-style: none;
+    padding: 8px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
