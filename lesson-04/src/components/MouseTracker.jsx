@@ -4,6 +4,7 @@ function MouseTracker() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
+    // setPosition({ x: e.clientX, y: e.clientY });
     const div = document.getElementById("mouse-tracker");
     const rect = div.getBoundingClientRect();
     const x = Math.round(e.clientX - rect.left);

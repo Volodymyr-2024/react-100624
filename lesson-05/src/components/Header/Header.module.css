@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+  }
+
+  .header__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 109px;
+  }
+  .logo span {
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .nav ul {
+    display: flex;
+    gap: 53px;
+  }
+  .nav li {
+    list-style: none;
+    font-family: "Raleway", sans-serif;
+  }
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 39px;
+  }
+  a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    font-family: "Raleway", sans-serif;
+  }
+  .header__right button {
+    height: 44px;
+    width: 65px;
+    background: #ffffff;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+  

@@ -1,0 +1,18 @@
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  padding-top: 107px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 126px;
+}
+
+.categoryListTitle {
+    margin-bottom: 43px;
+}
+
+.categoryListItems {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 27px 92px;
+}

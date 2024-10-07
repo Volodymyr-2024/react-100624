@@ -3,6 +3,7 @@ import PrettyButton from "./components/PrettyButton/PrettyButton.jsx";
 import "./button.css";
 import CardsList from "./components/CardsList.jsx";
 import Counter from "./components/Counter.jsx";
+import BadCounter from "./components/BadCounter.jsx";
 
 const buttonStyle = {
   backgroundColor: "blue",
@@ -70,6 +71,7 @@ function App() {
   return (
     <div>
       <Counter />
+      <BadCounter />
       <h2>Команды</h2>
       <CardsList teams={teams} />
       <h1>Lesson 03 - CSS и хук useState</h1>

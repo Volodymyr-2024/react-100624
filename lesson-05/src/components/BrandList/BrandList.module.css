@@ -1,0 +1,11 @@
+.brandContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.helpText{
+    color: rgba(105, 105, 105, 0.8);
+    font-size: 16px;
+    margin-left: 101px;
+}

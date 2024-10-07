@@ -1,0 +1,38 @@
+.card {
+    width: 270px;
+    height: 198px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 29px;
+    gap: 20px;
+
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    background: #FFFFFF;
+
+    box-shadow: 2px 4px 4px 0px #00000026;
+
+}
+
+.card:hover {
+transform: scale(1.05);
+}
+
+.cardImage {
+    width: 29px;
+    
+    object-fit: cover;
+}
+
+.cardContent {
+    /* text-align: center; */
+}
+
+.cardTitle {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+    /* padding: 111px 146px 60px 29px; */
+}

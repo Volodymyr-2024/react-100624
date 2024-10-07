@@ -4,6 +4,7 @@ export default function Counter() {
   const [count, setCount] = useState(0);
 
   function handleClick(event) {
+    console.log("Клик на div");
     if (event.target.tagName !== "BUTTON") {
       return;
     }
@@ -24,9 +25,21 @@ export default function Counter() {
 
   return (
     <div onClick={handleClick}>
-      <h2>Делегированный счетчик</h2>
-      <p>{count}</p>
-      <button data-operator="+" data-number="1">
+      <h2 id="counter-h2">Делегированный счетчик</h2>
+      <p
+        onClick={() => {
+          console.log("P clicked");
+        }}
+      >
+        {count}
+      </p>
+      <button
+        onClick={() => {
+          console.log("Клик на кнопку +1");
+        }}
+        data-operator="+"
+        data-number="1"
+      >
         +1
       </button>
       <button data-operator="+" data-number="5">

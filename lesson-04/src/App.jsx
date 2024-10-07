@@ -14,7 +14,12 @@ function App() {
   return (
     <>
       <h1>События и Реакт</h1>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() => {
+          console.log("App click");
+        }}
+      >
         <NotesApp />
         <ClickCounter />
         <Counter />
