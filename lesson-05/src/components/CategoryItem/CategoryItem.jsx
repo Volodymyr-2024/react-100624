@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Categoryitem.module.css";
 
 const Card = ({ title, imageUrl }) => {
