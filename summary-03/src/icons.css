@@ -1,0 +1,11 @@
+.icon {
+    fill: #1ED760;
+    transition: all 0.3s;
+}
+
+.icon:hover {
+    /* fill: #1181F1;
+    transform: translate(0, -10px);
+    stroke: blue; */
+    filter: brightness(0.5) saturate(3) hue-rotate(100deg);
+}
