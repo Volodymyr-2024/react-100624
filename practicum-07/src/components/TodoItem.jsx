@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import TodoContext from "../context/TodoContext";
 
 export default function TodoItem({ todo }) {
@@ -30,3 +31,11 @@ export default function TodoItem({ todo }) {
     </li>
   );
 }
+
+// TodoItem.propTypes = {
+//   todo: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     text: PropTypes.string.isRequired,
+//     completed: PropTypes.bool.isRequired,
+//   }),
+// };

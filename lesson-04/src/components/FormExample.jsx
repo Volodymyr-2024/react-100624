@@ -17,6 +17,7 @@ export default function FormExample() {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Форма</h2>
+      <img src="#" alt />
       <input
         type="text"
         value={name}

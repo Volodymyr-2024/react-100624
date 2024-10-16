@@ -1,0 +1,10 @@
+.details {
+    font-size: 18px;
+    color: rgb(112, 22, 49);
+    text-align: center;
+}
+.details h1 {
+    margin-top: 0;
+    font-size: 50px;
+    color: rgb(63, 7, 115);
+}
