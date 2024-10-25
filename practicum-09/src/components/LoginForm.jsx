@@ -5,6 +5,8 @@ export default function LoginForm() {
   const { register, handleSubmit, formState } = useForm();
   const { logIn, error: loginError, loading } = useAuth();
 
+  const { errors } = formState;
+
   function authneticate(values) {
     logIn(values.identity, values.password);
   }
