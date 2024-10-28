@@ -1,0 +1,10 @@
+.Link {
+    color: #61dafb;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.Link.active {
+    color: red;
+    font-weight: bold;
+}
