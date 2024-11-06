@@ -1,0 +1,23 @@
+.item {
+    font-family: "Open Sans", sans-serif;
+    border: 2px solid #80A1D4;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item > h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.delete_button {
+    background-color: #80A1D4;
+}
+
+.button_container {
+    display: flex;
+    justify-content: space-between;
+}
