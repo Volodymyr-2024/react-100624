@@ -16,7 +16,12 @@ function NoteItem({ note, deleteNote, setCurrentId }) {
   return (
     <article className={styles.item}>
       <h2>{note.title}</h2>
-      <p>{note.content}</p>
+      {/* <p>{note.content}</p> */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: note.content,
+        }}
+      />
       <div className={styles.button_container}>
         <button className={common.button} onClick={handleEditNote}>
           Edit

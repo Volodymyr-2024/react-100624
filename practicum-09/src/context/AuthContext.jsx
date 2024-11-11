@@ -1,5 +1,4 @@
 import { createContext, useState, useContext } from "react";
-import { set } from "react-hook-form";
 
 const AuthContext = createContext();
 
@@ -31,7 +30,7 @@ export default function AuthProvider({ children }) {
           identity: identity,
           password: password,
         }),
-      }
+      },
     )
       .then((response) => {
         if (!response.ok) {
