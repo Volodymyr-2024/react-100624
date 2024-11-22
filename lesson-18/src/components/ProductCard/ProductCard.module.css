@@ -1,0 +1,86 @@
+.Wrapper {
+    padding: 40px;
+    border: 2px solid #00000026;
+    border-radius: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Wrapper img {
+    width: 100%;
+}
+
+.Wrapper p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29.26px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.CardTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CardBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p.PriceTitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #666666;   
+    text-transform: uppercase; 
+}
+
+p.PriceContent {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.Button {
+    width: 39px;
+    height: 39px;
+    background-image: url(/button_icon.svg);
+    border: none;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.Button:hover {
+    background-image: url(/button_icon_hover.svg);
+}
+
+p.SaleBanner {
+    position: absolute;
+    background-color: red;
+    top: 33px;
+    left: -55px;
+    transform: rotate(-45deg);
+    width: 200px;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}

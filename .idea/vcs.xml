@@ -8,6 +8,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gh-pages-test" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/lesson-01/create-react-app" vcs="Git" />
   </component>
 </project>

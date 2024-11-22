@@ -1,17 +1,19 @@
 import React, { useState, useCallback, useMemo } from "react";
 
+
+
 const UserCard = React.memo(({ user, onFavorite }) => {
-  console.log(`Rendering <UserCard /> for ${user.name}`);
-  return (
-    <div>
-      <h4>
-        {user.name} {user.isFavorite ? "❤️" : null}
-      </h4>
-      <button onClick={() => onFavorite(user.id)}>
-        {user.isFavorite ? "Unfavorite" : "Add to Favorites"}
-      </button>
-    </div>
-  );
+    console.log(`Rendering <UserCard /> for ${user.name}`);
+    return (
+        <div>
+            <h4>
+                {user.name} {user.isFavorite ? "❤️" : null}
+            </h4>
+            <button onClick={() => onFavorite(user.id)}>
+                {user.isFavorite ? "Unfavorite" : "Add to Favorites"}
+            </button>
+        </div>
+    );
 });
 
 UserCard.displayName = "UserCard";
@@ -72,3 +74,4 @@ const DashboardOptimized = () => {
 };
 
 export default DashboardOptimized;
+

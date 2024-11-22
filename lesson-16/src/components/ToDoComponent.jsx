@@ -19,7 +19,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ToDoItem from "./ToDoItem";
 import { useState } from "react";
 
-export default function ToDo() {
+export default function ToDoComponent() {
   const [newTodoTitle, setNewTodoTitle] = useState("");
   const [todos, setTodos] = useState([]);
 
@@ -38,8 +38,8 @@ export default function ToDo() {
   function toggleTodo(id) {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, isChecked: !todo.isChecked } : todo
-      )
+        todo.id === id ? { ...todo, isChecked: !todo.isChecked } : todo,
+      ),
     );
   }
 

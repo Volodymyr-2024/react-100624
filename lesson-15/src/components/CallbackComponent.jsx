@@ -18,3 +18,5 @@ function CallbackComponent({ func }) {
 }
 
 export default memo(CallbackComponent);
+
+

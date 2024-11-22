@@ -1,13 +1,11 @@
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import RegistrationForm from "./components/RegistrationForm";
 import CssBaseline from "@mui/material/CssBaseline";
-import ToDo from "./components/ToDo";
-import { HorizontalRule } from "@mui/icons-material";
+import ToDoComponent from "./components/ToDoComponent.jsx";
 import { Divider } from "@mui/material";
 
 function App() {
@@ -17,7 +15,7 @@ function App() {
       <ResponsiveAppBar />
       <Container>
         <Stack mt={2} spacing={2}>
-          <ToDo />
+          <ToDoComponent />
           <Divider />
           <RegistrationForm />
           <Button variant="contained">Click me!!!!</Button>

@@ -1,0 +1,12 @@
+.Wrapper {
+    min-height: calc(100vh - 447px);
+}
+
+.Main {
+    max-width: 1420px;
+    margin: 28px 16px;
+
+    @media(min-width: 1452px) {
+        margin: 28px auto;
+    }
+}
