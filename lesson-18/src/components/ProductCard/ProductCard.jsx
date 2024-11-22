@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from "./ProductCard.module.css";
 import { useCartContext } from "../../context/CartContextProvider";
+import { formatMoney } from "../../utils";
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCartContext();
@@ -20,7 +21,7 @@ export default function ProductCard({ product }) {
       <div className={styles.CardBottom}>
         <div>
           <p className={styles.PriceTitle}>Цена:</p>
-          <p className={styles.PriceContent}>{product.price} €</p>
+          <p className={styles.PriceContent}>{formatMoney(product.price)}</p>
         </div>
         <button
           className={styles.Button}

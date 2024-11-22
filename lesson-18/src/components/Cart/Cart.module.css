@@ -1,0 +1,9 @@
+.Wrapper{
+    display: grid;
+    grid-template-columns: 1fr 388px;
+    gap: 129px;
+}
+
+.CartList {}
+
+.CartTotals {}
