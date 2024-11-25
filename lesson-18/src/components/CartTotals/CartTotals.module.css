@@ -1,0 +1,35 @@
+.CartTotals {
+    background-color: #FAFAFA;
+    padding: 26px 28px 43px;
+}
+
+.CartTotals h2 {
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.88px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000;
+    text-align: center;
+}
+
+.CartTotals ul {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    margin: 42px 0;
+}
+
+.CartTotals li {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 23.51px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #000000B2;
+
+}
