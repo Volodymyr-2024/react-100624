@@ -1,0 +1,33 @@
+.Breadcrumbs {
+    & > ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 16px;
+
+        & > li {
+            position: relative;
+            border: 1px solid #605f5f;
+            border-radius: 16px;
+            padding: 8px;
+        }
+
+        & > li::before {
+            content: '';
+            position: absolute;
+            left: -17px;
+            width: 16px;
+            border-bottom: 1px solid black;
+            top: 50%;
+        }
+
+        & > li:first-of-type::before {
+            content: none;
+        }
+
+        & > li:last-of-type {
+            background-color: aqua;
+        }
+    }
+}
