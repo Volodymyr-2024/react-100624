@@ -1,0 +1,22 @@
+meta {
+  name: Delete task
+  type: http
+  seq: 6
+}
+
+delete {
+  url: https://ich-pb.slavalab.com/api/collections/tasks/records/4uov174xyp9vc31
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2xsZWN0aW9uSWQiOiJfcGJfdXNlcnNfYXV0aF8iLCJleHAiOjE3MzM4MjExOTQsImlkIjoiYWYxMTRzZmxtNjNpeDR3IiwicmVmcmVzaGFibGUiOnRydWUsInR5cGUiOiJhdXRoIn0.vKZPihnB4-bhwUtuYAApMh7FDceuND6oc8XjoJ9_tFU
+}
+
+body:json {
+  {
+    "title": "New task",
+    "status": "new"
+  }
+}

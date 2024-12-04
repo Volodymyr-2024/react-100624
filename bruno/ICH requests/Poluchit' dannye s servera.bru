@@ -1,0 +1,22 @@
+meta {
+  name: Poluchit' dannye s servera
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://jsonplaceholder.typicode.com/posts/?name=param1&name2=param2
+  body: json
+  auth: bearer
+}
+
+params:query {
+  name: param1
+  name2: param2
+}
+
+body:json {
+  {
+    "data": "hello"
+  }
+}

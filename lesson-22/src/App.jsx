@@ -16,14 +16,14 @@ const links = [
     label: "Categories",
     url: "/categories",
   },
-  {
-    label: "Dry & Wet Food",
-    url: "/categories/5",
-  },
-  {
-    label: "Dry Dog Food Brand Name",
-    url: "/products/4",
-  },
+  // {
+  //   label: "Dry & Wet Food",
+  //   url: "/categories/5",
+  // },
+  // {
+  //   label: "Dry Dog Food Brand Name",
+  //   url: "/products/4",
+  // },
 ];
 
 function App() {
