@@ -1,6 +1,6 @@
 import LoadingBar from "react-top-loading-bar";
 import Posts from "./components/Posts";
-import { useEffect, useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchCategories } from "./redux/slices/categories/categoriesSlice";
