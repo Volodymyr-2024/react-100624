@@ -1,93 +1,87 @@
-import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { useEffect, useState, useMemo } from "react";
+import axios from "axios";
+import { Link, useSearchParams } from "react-router-dom";
+import ParameterControls from "./ParameterControls";
+
+// "Чистая" функция, так как она не имеет побочных эффектов (не использует внешние переменные)
+function sortAndFilterProducts(allProducts, searchParams) {
+  let newProducts = [...allProducts];
+
+  if (searchParams.get("min")) {
+    newProducts = newProducts.filter(
+      (product) => product.price >= Number(searchParams.get("min"))
+    );
+  }
+
+  if (searchParams.get("max")) {
+    newProducts = newProducts.filter(
+      (product) => product.price <= Number(searchParams.get("max"))
+    );
+  }
+
+  if (searchParams.get("discountOnly") === "1") {
+    // ВНИМАНИЕ! Наш сервер не знает про скидки, код ниже нужно поменять
+  }
+
+  if (searchParams.get("sort")) {
+    if (searchParams.get("sort") === "none") return newProducts;
+    newProducts = newProducts.sort((a, b) => {
+      if (searchParams.get("sort") === "asc") {
+        return a.price - b.price;
+      } else if (searchParams.get("sort") === "desc") {
+        return b.price - a.price;
+      } else if (searchParams.get("sort") === "newest") {
+        // ВНИМАНИЕ! Наш сервер не знает про дату добавления, код ниже нужно поменять
+        return 0;
+      }
+      return 0;
+    });
+  }
+
+  return newProducts;
+}
 
 export default function SmartList() {
   const [allProducts, setAllProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  // Не забываем показать ошибку и статус загрузки пользователю
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const minPrice = searchParams.get("min");
-  const maxPrice = searchParams.get("max");
-  const discountOnly = searchParams.get("discountOnly") === "1" ? true : false;
-  const sortType = searchParams.get("sort");
-
-  function handleParamChange(param, newValue) {
-    const newSP = new URLSearchParams(searchParams);
-    if (param === "discountOnly") {
-      if (newValue) {
-        newSP.set("discountOnly", "1");
-      } else {
-        newSP.delete("discountOnly");
-      }
-    } else {
-      newSP.set(param, newValue);
+  async function fetchProducts() {
+    setIsLoading(true);
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      setAllProducts(response.data);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+    } finally {
+      setIsLoading(false);
     }
-    setSearchParams(newSP);
   }
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    return sortAndFilterProducts(allProducts, searchParams);
+  }, [allProducts, searchParams]);
 
   return (
     <div>
       <h1>Products</h1>
-      <label>
-        Min
-        <input
-          type="number"
-          value={minPrice}
-          onChange={(e) => {
-            handleParamChange("min", e.target.value);
-          }}
-        />
-      </label>
+      <ParameterControls />
 
-      <label>
-        Max
-        <input
-          type="number"
-          value={maxPrice}
-          onChange={(e) => {
-            handleParamChange("max", e.target.value);
-          }}
-        />
-      </label>
-
-      <label>
-        Discount Only
-        <input
-          type="checkbox"
-          checked={Boolean(discountOnly)}
-          onChange={(e) => {
-            handleParamChange("discountOnly", e.target.checked);
-          }}
-        />
-      </label>
-
-      <label>
-        <select
-          onChange={(e) => {
-            handleParamChange("sort", e.target.value);
-          }}
-        >
-          <option value="none">by default</option>
-          <option value="newest">newest</option>
-          <option value="desc">price: high-low</option>
-          <option value="asc">price: low-high</option>
-        </select>
-      </label>
-
-      <pre>
-        {JSON.stringify(
-          {
-            allProducts,
-            filteredProducts,
-            minPrice,
-            maxPrice,
-            discountOnly,
-            sortType,
-          },
-          null,
-          2
-        )}
-      </pre>
+      <ul>
+        {filteredProducts.map((product) => (
+          <li key={product.id}>
+            <span style={{ fontWeight: "900" }}>{product.price}</span> -{" "}
+            {product.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
